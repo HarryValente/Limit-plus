@@ -21,10 +21,9 @@ h2{
     text-transform: uppercase;
     width: 100%;
     text-align: center;
-    /* -webkit-box-reflect: 1px linear-gradient(transparent, #0004);         THIS IS NOT CURRENTLY SUPPORTED */
     outline: none;
     animation: animate 5s linear infinite;
-    text-decoration-style: none;
+    text-decoration: none;
 }
 
 @keyframes animate{
@@ -41,20 +40,3 @@ h2{
         0 0 160px #03bcf4;
     }
 }
-
-/* THIS IS FOR A SLOW PROGRESSIVE GLOW
-
- @keyframes animate{
-    0%{
-        color: #0e3742;
-        text-shadow: none;
-    }
-    100%{
-        color: #ffffff;
-        text-shadow: 0 0 10px #03bcf4,
-        0 0 20px #03bcf4,
-        0 0 60px #03bcf4,
-        0 0 80px #03bcf4,
-        0 0 160px #03bcf4;
-    }
-} */
