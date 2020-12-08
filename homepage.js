@@ -16,3 +16,22 @@ btn.addEventListener('click', () => {
     search.classList.toggle('active')
     input.focus()
 })
+
+// Initialising variables
+const panels = document.querySelectorAll('.panel')
+
+
+// When clicking it runs the function of removeActiveClasses and adds active to the one thats clicked
+panels.forEach((panel) => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+// Remove active from classes function
+function removeActiveClasses(){
+    panels.forEach(panel =>{
+        panel.classList.remove('active')
+    })
+}
