@@ -34,6 +34,12 @@ header.sticky{
 header .logo{
     font-size: 2.2em;
     transition: 0.6s;
+    
+}
+
+header .logo a{
+    text-decoration: none;
+    color: #eeeeee;
 }
 
 header ul{
@@ -41,7 +47,7 @@ header ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 60%;
     padding-left: 5%;
 }
 
@@ -56,21 +62,54 @@ header ul li a{
     letter-spacing: 2px;
     font-weight: 500px;
     transition: 0.3s;
-    color: yellow;
+    color: #eeeeee;
 }
 
 header ul li a:hover{
     color: #86c2f0;
 }
 
+header ul .fas{
+    padding: 14px;
+    font-size: 1.2em;
+    color: #eeeeee;
+}
+
 header.sticky .logo,
-header.sticky ul li a{
+header.sticky .logo a,
+header.sticky ul li a,
+header.sticky ul .fas{
     color: #000000;
 }
 
-header ul .fas{
-    padding: 0 23%;
-    color: rgb(0, 255, 76);
+/* Underline From Left */
+.hvr-underline-from-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+.hvr-underline-from-left:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #2098D1;
+    height: 4px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
+    right: 0;
 }
 
 @media (max-width: 1115px){
@@ -100,7 +139,7 @@ header ul .fas{
 
 .search{
     position: relative;
-    left: 20%;
+    left: 5%;
     height: 35px;
 }
 
@@ -136,7 +175,8 @@ header ul .fas{
 }
 
 .search.active .btn{
-    transform: translateX(-35px);
+    transform: translateX(200px);
+    /* transform: translateX(-35px); */
 }
 
 .headingImages{
@@ -218,9 +258,19 @@ header ul .fas{
     background: linear-gradient(135deg, #d41e31, #4918f8);
 }
 
-.card-container .card:hover{
-    
-    background: rgba(0, 0, 0, 0.3);
+.card-container .card:nth-child(1):hover{
+    background-image: url(../images/pop-artSuperhero.jpg);
+    object-fit: cover;
+}
+
+.card-container .card:nth-child(2):hover{
+    background-image: url(../images/cityWinter.jpg);
+    object-fit: cover;
+}
+
+.card-container .card:nth-child(3):hover{
+    background-image: url(../images/mountains.jpg);
+    object-fit: cover;
 }
 
 .card-container .card:hover{
@@ -265,14 +315,14 @@ header ul .fas{
 }
 
 .card .content h2{
-    color: #ffffff;
+    color: #000000;
     text-transform: uppercase;
     font-size: 1.3em;
     line-height: 1em;
 }
 
 .card .content p{
-    color: #ffffff;
+    color: #000000;
     font-size: 0.8em;
 }
 
@@ -301,5 +351,26 @@ header ul .fas{
 
     .card:hover{
         height: 200px;
+    }
+}
+
+@media (max-width:485px){
+    .card .content h2{
+        font-size: 1.0em;
+    }
+
+    .card .content p{
+        font-size: 0.6em;
+    }
+
+    .card .content a{
+        padding: 3px 8px;
+        border-radius: 10px;
+        font-size: 0.6em;
+    }
+
+    .card:hover img{
+        left: 80%;
+        height: 210px;
     }
 }
