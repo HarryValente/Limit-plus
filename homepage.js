@@ -82,7 +82,7 @@ function showMovies(movies){
         </div>
         <div class="overview">
             <h3>Overview</h3>
-            ${overview}
+            <div class="overviewText">${overview}</div>
         </div>
     `
 

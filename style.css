@@ -10,37 +10,101 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #07252d;
+    background: #0d313b;
 }
 
-h2{
+.title{
     position: relative;
     font-size: 6em;
     letter-spacing: 15px;
-    color: #0e3742;
+    color: #1e6a80;
     text-transform: uppercase;
-    width: 100%;
+    width: 100vw;
     text-align: center;
+    padding-bottom: 10%;
     outline: none;
-    animation: animate 5s linear infinite;
+    top: 30%;
     text-decoration: none;
+    animation: slideInFromLeft 5s ease 0s 1 normal forwards;
 }
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-20%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0);
+      opacity: 0.3;
+    }
+    51% {
+        transform: translateY(-1%);
+    }
+    100% {
+        transform: translateY(-35%);
+        color: #26839c;
+        opacity: 1;
+    }
+  }
 
 a{
     text-decoration: none;
 }
 
-@keyframes animate{
-    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: #0e3742;
-        text-shadow: none;
+.fa-compact-disc{
+    animation: spinDisc 3s ease 5s 1 normal forwards;
+    opacity: 0;
+}
+
+@keyframes spinDisc {
+    0% {
+        transform: rotate(2160deg);
     }
-    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
-        color: #ffffff;
-        text-shadow: 0 0 10px #03bcf4,
-        0 0 20px #03bcf4,
-        0 0 60px #03bcf4,
-        0 0 80px #03bcf4,
-        0 0 160px #03bcf4;
+    50% {
+        opacity: 1;
+    }
+    51% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.slide{
+    display: flex;
+    justify-content: center;
+    top: 37%;
+    font-size: 5em;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    animation: discEnter 2s ease-in 8s 1 normal forwards;
+}
+
+@keyframes discEnter {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(45%);
+        opacity: 0;
+    }
+    
+}
+
+.profileContainer{
+    display: flex;
+    justify-content: center;
+    top: 47%;
+    width: 40%;
+    height: 5px;
+    background-color: rgb(105, 151, 182);
+    position: absolute;
+    animation: profileShow 2s ease 10s 1 normal forwards;
+}
+
+@keyframes profileShow {
+    100% {
+        height: 200px;
     }
 }
