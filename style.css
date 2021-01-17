@@ -9,12 +9,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     background: #0d313b;
 }
 
 .title{
-    position: relative;
+    position: absolute;
+    /* font-size: clamp(4em, 15vw, 6em); */
     font-size: 6em;
     letter-spacing: 15px;
     color: #1e6a80;
@@ -23,9 +24,9 @@ body{
     text-align: center;
     padding-bottom: 10%;
     outline: none;
-    top: 30%;
+    top: 30vh;
     text-decoration: none;
-    animation: slideInFromLeft 5s ease 0s 1 normal forwards;
+    animation: slideInFromLeft 4s ease 0s 1 normal forwards;
 }
 
 @keyframes slideInFromLeft {
@@ -51,8 +52,16 @@ a{
     text-decoration: none;
 }
 
+@media (max-width: 680px) {
+    .title{
+        top: 25vh;
+        font-size: 5em;
+    }
+} 
+
 .fa-compact-disc{
-    animation: spinDisc 3s ease 5s 1 normal forwards;
+    animation: spinDisc 3s ease 4s 1 normal forwards;
+    top: 36vh;
     opacity: 0;
 }
 
@@ -74,11 +83,11 @@ a{
 .slide{
     display: flex;
     justify-content: center;
-    top: 37%;
+    top: 37vh;
     font-size: 5em;
     color: rgb(255, 255, 255);
     position: absolute;
-    animation: discEnter 2s ease-in 8s 1 normal forwards;
+    animation: discEnter 2s ease-in 7s 1 normal forwards;
 }
 
 @keyframes discEnter {
@@ -94,17 +103,49 @@ a{
 
 .profileContainer{
     display: flex;
+    align-items: center;
     justify-content: center;
-    top: 47%;
+    justify-content: space-around;
+    top: 48vh;
     width: 40%;
     height: 5px;
     background-color: rgb(105, 151, 182);
     position: absolute;
-    animation: profileShow 2s ease 10s 1 normal forwards;
+    animation: profileShow 2s ease 9s 1 normal forwards;
 }
 
 @keyframes profileShow {
+
     100% {
         height: 200px;
     }
 }
+
+.profile{
+    position: relative;
+    object-fit: cover;
+    background-color: #0d313b;
+    width: 20%;
+    height: 100%;
+    opacity: 0;
+    animation: profilePics 2s ease 9s 1 normal forwards;
+} 
+
+@keyframes profilePics {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+.profile img{
+    object-fit: cover;
+}
+
+.profile img:hover{
+    opacity: 0.5;
+}
+
