@@ -213,14 +213,14 @@ header.sticky ul .fas{
     background-size: auto 100%;
     background-position: left;
     background-repeat: no-repeat;
-    height: 60vh;
-    width: 230px;
+    height: 58vh;
+    min-width: 60px;
     border-radius: 5px;
     cursor: pointer;
     flex: 0.5;
     margin: 5px;
     position: relative;
-    transition: 0.7s ease-in;
+    transition: 0.7s ease-in-out;
     
 }
 
@@ -246,7 +246,7 @@ header.sticky ul .fas{
 
 @media (max-width: 725px){
     .panel:nth-of-type(8),.panel:nth-of-type(9),
-    .panel:nth-of-type(10){
+    .panel:nth-of-type(10),.panel:nth-of-type(11),.panel:nth-of-type(12){
         display: none;
     }
 }
@@ -256,8 +256,8 @@ header.sticky ul .fas{
         width: 100vw;
     }
 
-    .panel:nth-of-type(4), .panel:nth-of-type(5),
-    .panel:nth-of-type(6), .panel:nth-of-type(7){
+    .panel:nth-of-type(4)
+    {
         display: none;
     }
 }
