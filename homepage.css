@@ -160,7 +160,7 @@ header.sticky ul .fas{
 
 #form{
     position: relative;
-    left: 5%;
+    left: 25%;
     height: 35px;
 }
 
@@ -171,7 +171,8 @@ header.sticky ul .fas{
     padding: 15px;
     height: 35px;
     width: 35px;
-    transition: width 0.3s ease;
+    transition: all 0.3s ease;
+    /* transition: transform; */
 }
 
 .btn{
@@ -193,11 +194,12 @@ header.sticky ul .fas{
 }
 
 #form.active #input{
-    width: 200px;
+    transform: translateX(-145px);
+    width: 180px;
 }
 
 #form.active .btn{
-    transform: translateX(200px);
+    transform: translateX(-172px);
     /* transform: translateX(-35px); */
 }
 
@@ -214,9 +216,9 @@ header.sticky ul .fas{
 
 .profileTab{
     position: absolute;
-    background-color: chartreuse;
+    background-color: #2F4353;
     right: 3vw;
-    top: 8vh;
+    top: 7.5vh;
     width: 120px;
     height: 220px;
     border-radius: 5px;
@@ -261,16 +263,54 @@ header.sticky ul .fas{
 .picture:hover + .profileTab{
     visibility: visible;
     opacity: 1;
-    transition: 0.9s ease;
+    transition: 0.7s linear;
 }
 
-.feature{
+.profileTab:hover{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* .feature{
     width: 95vw;
-    height: 60vh;
+    height: 65vh;
     position: relative;
     top: 15vh;
     background-color: blue;
     margin: auto;
+} */
+
+.swiper-container{
+    width: 95vw;
+    height: 65vh;
+    position: relative;
+    top: 15vh;
+    background-color: blue;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.swiper-slide{
+    text-align: center;
+    font-size: 18px;
+}
+
+.firstSlide{
+    width: 100%;
+    height: 100%;
+    background-color: darkorange;
+}
+
+.secondSlide{
+    width: 100%;
+    height: 100%;
+    background-color: deeppink;
+}
+
+.thirdSlide{
+    width: 100%;
+    height: 100%;
+    background-color: crimson;
 }
 
 .card-container{
