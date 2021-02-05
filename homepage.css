@@ -29,14 +29,13 @@ header{
 }
 
 header.sticky{
-    padding: 10px 5%;
+    padding: 0 5%;
     background: #cfcfcc;
 }
 
 header .logo{
     font-size: 2.2em;
     transition: 0.6s;
-    
 }
 
 header .logo a{
@@ -56,7 +55,6 @@ header ul{
 header ul li{
     list-style: none;
     position: relative;
-
 }
 
 header ul li a{
@@ -139,28 +137,9 @@ header.sticky ul .fas{
     }
 }
 
-/* #form{
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
-    border-radius: 50px;
-    font-family: inherit;
-    font-size: 1em;
-    padding: 0.5em 1em;
-    color: #ffffff;
-}
-
-#form::placeholder{
-    color: #7378cf;
-}
-
-#form:focus{
-    outline: none;
-    background-color: var(--primary-color);
-} */
-
 #form{
-    position: relative;
-    left: 25%;
+    position: absolute;
+    right: 10vw;
     height: 35px;
 }
 
@@ -172,7 +151,6 @@ header.sticky ul .fas{
     height: 35px;
     width: 35px;
     transition: all 0.3s ease;
-    /* transition: transform; */
 }
 
 .btn{
@@ -194,36 +172,38 @@ header.sticky ul .fas{
 }
 
 #form.active #input{
-    transform: translateX(-145px);
     width: 180px;
 }
 
 #form.active .btn{
-    transform: translateX(-172px);
+    transform: translateX(-34px);
     /* transform: translateX(-35px); */
 }
 
 .picture{
-    position: absolute;
+    position: fixed;
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    right: 4vw;
-    top: 2vh;
+    right: 3vw;
     cursor: pointer;
     
 }
 
 .profileTab{
     position: absolute;
-    background-color: #2F4353;
+    background-color: rgba(0, 0, 0, 0.8);
     right: 3vw;
-    top: 7.5vh;
-    width: 120px;
+    top: 7vh;
+    width: 148px;
     height: 220px;
-    border-radius: 5px;
+    border-radius: 2px;
     visibility: hidden;
     opacity: 0;
+    display: block;
+    color: #ffffff;
+    transition: all 0.4s ease-in;
+    letter-spacing: 2px;
 }
 
 .switchAcc{
@@ -233,37 +213,56 @@ header.sticky ul .fas{
     width: 50px;
     height: 95px;
     margin: 8px;
+    
 }
 
 .ciaraAcc, .emileAcc{
     width: 40px;
     height: 40px;
+    font-weight: 500px;
 }
 
 .accNameC{
     position: absolute;
     top: 19px;
     left: 60px;
+    cursor: pointer;
 }
 
 .accNameP{
     position: absolute;
     top: 67px;
     left: 60px;
+    cursor: pointer;
 }
 
 .profileLinks{
     position: absolute;
-    bottom: 5px;
-    right: 30px;
+    bottom: 15px;
+    right: 35px;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    font-weight: 500px;
+}
+
+.pLinks a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.pLinks:hover, .accNameC:hover, .accNameP:hover{
+    text-decoration: underline;
+}
+
+.profileLinks .pLinks:hover{
+    color: #ffffff;
 }
 
 .picture:hover + .profileTab{
     visibility: visible;
-    opacity: 1;
-    transition: 0.7s linear;
+    opacity: 1; 
 }
 
 .profileTab:hover{
@@ -550,8 +549,8 @@ main{
 }
 
 .movie{
-    width: 300px;
-    height: 520px;
+    width: 200px;
+    height: 375px;
     margin: 1em;
     background-color: #373b69;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
@@ -559,6 +558,12 @@ main{
     overflow: hidden;
     border-radius: 5px 5px 5px 5px;
     top: 25vh;
+}
+
+@media (max-width:695px){
+    .movie{
+        margin: 0.2em;
+    }
 }
 
 .movie img{
@@ -599,15 +604,19 @@ main{
 
 .overview{
     background-color: #ffffff;
-    padding: 2em;
+    padding: 1.5em;
     position: absolute;
     left: 0;
     bottom: 0;
     right: 0;
-    max-height: 300px;
+    max-height: 100%;
     transform: translateY(101%);
     transition: transform 0.3s ease-in;
-    text-overflow: ellipsis;
+    font-size: 0.8em;
+}
+
+.overviewText{
+    
 }
 
 .movie:hover .overview{

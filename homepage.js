@@ -22,6 +22,11 @@ btn && search.addEventListener('mouseout', () => {
     search.classList.remove('active')
 })
 
+btn && search.addEventListener('click', () => {
+    search.classList.add('active')
+    input.focus()
+})
+
 // Initialising variables
 const panels = document.querySelectorAll('.panel')
 
@@ -124,7 +129,7 @@ var swiper = new Swiper('.swiper-container', {
     centeredSlides: true,
     loop: true,
     autoplay: {
-      delay: 2500,
+      delay: 10000,
       disableOnInteraction: false,
     },
     pagination: {
