@@ -136,6 +136,11 @@ a{
     border: 2px #dfdfdf solid;
 } 
 
+.profile:hover{
+    transform: scale(1.03);
+    transition: all 0.3s;
+}
+
 @keyframes profilePics {
     0% {
         opacity: 0;

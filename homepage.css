@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -180,6 +181,34 @@ header.sticky ul .fas{
     /* transform: translateX(-35px); */
 }
 
+@media(max-width: 950px){
+    #form{
+        
+        height: 28px;
+    }
+    
+    #form #input{
+        font-size: 0.9em;
+        padding: 12px;
+        height: 28px;
+        width: 28px;
+    }
+
+    .btn{
+        font-size: 15px;
+        height: 28px;
+        width: 28px;
+    }
+
+    #form.active #input{
+        width: 110px;
+    }
+
+    #form.active .btn{
+        transform: translateX(-27px);
+    }
+}
+
 .picture{
     position: fixed;
     width: 45px;
@@ -284,9 +313,17 @@ header.sticky ul .fas{
     height: 65vh;
     position: relative;
     top: 15vh;
-    background-color: blue;
+    background-color: #22254b;
     margin: auto;
     border-radius: 5px;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    color: #22254b;
+}
+
+.swiper-pagination-bullet{ 
+    background-color: #22254b;
 }
 
 .swiper-slide{
@@ -519,22 +556,33 @@ header.sticky ul .fas{
     transition: opacity 0.3s ease-in 0.4s;
 }
 
+@media (max-width: 1125px){
+    .panel:nth-of-type(4),.panel:nth-of-type(5),.panel:nth-of-type(6),.panel:nth-of-type(7){
+        display: none;
+    }
+}
+
 @media (max-width: 890px){
-    .panel:nth-of-type(2),.panel:nth-of-type(3),.panel:nth-of-type(4){
+    .panel:nth-of-type(2),.panel:nth-of-type(3){
         display: none;
     }
 }
 
-@media (max-width: 725px){
-    .panel:nth-of-type(8),.panel:nth-of-type(9),
-    .panel:nth-of-type(10),.panel:nth-of-type(11),.panel:nth-of-type(12){
+@media (max-width: 680px){
+    .panel:nth-of-type(8){
         display: none;
     }
 }
 
-@media (max-width: 480px){
+@media (max-width: 620px){
+    .panel:nth-of-type(9)
+    {
+        display: none;
+    }
+}
 
-    .panel:nth-of-type(4)
+@media (max-width: 500px){
+    .panel:nth-of-type(10)
     {
         display: none;
     }
@@ -545,7 +593,7 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 250px;
+    margin-bottom: 430px;
 }
 
 .movie{
@@ -558,6 +606,11 @@ main{
     overflow: hidden;
     border-radius: 5px 5px 5px 5px;
     top: 25vh;
+}
+
+.movie:hover{
+    transition: 0.3s;
+    transform: scale(1.03);
 }
 
 @media (max-width:695px){
@@ -613,10 +666,6 @@ main{
     transform: translateY(101%);
     transition: transform 0.3s ease-in;
     font-size: 0.8em;
-}
-
-.overviewText{
-    
 }
 
 .movie:hover .overview{
