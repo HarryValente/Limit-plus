@@ -223,7 +223,7 @@ header.sticky ul .fas{
     position: absolute;
     background-color: rgba(0, 0, 0, 0.8);
     right: 3vw;
-    top: 7vh;
+    top: 9vh;
     width: 148px;
     height: 220px;
     border-radius: 2px;
@@ -299,18 +299,37 @@ header.sticky ul .fas{
     opacity: 1;
 }
 
-/* .feature{
-    width: 95vw;
-    height: 65vh;
-    position: relative;
-    top: 15vh;
-    background-color: blue;
-    margin: auto;
-} */
+.mobile-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: green;
+    z-index: 999999999999999;
+}
+
+.mobile-nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    
+}
+
+.mobile-nav ul li{
+    font-size: 2em;
+    color: #ffffff;
+}
+
+@media (max-width: 750px){
+    .header ul{
+        display: none;
+    }
+}
 
 .swiper-container{
     width: 95vw;
-    height: 65vh;
+    height: 70vh;
     position: relative;
     top: 15vh;
     background-color: #22254b;
@@ -353,7 +372,7 @@ header.sticky ul .fas{
     position: relative;
     display: flex;
     justify-content: space-around;
-    top: 20vh;
+    top: 19vh;
     transition: 0.3s ease;
 }
 
@@ -515,7 +534,7 @@ header.sticky ul .fas{
 
 .headingImages{
     position: relative;
-    width: 90vw;
+    width: 92vw;
     display: flex;
     margin: auto;
     top: 22vh;
@@ -526,7 +545,8 @@ header.sticky ul .fas{
     background-position: left;
     background-repeat: no-repeat;
     height: 58vh;
-    min-width: 60px;
+    min-width: 55px;
+    max-width: 56px;
     border-radius: 5px;
     cursor: pointer;
     flex: 0.5;
@@ -536,25 +556,12 @@ header.sticky ul .fas{
     
 }
 
-.panel h3{
-    font-size: 24px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    margin: 0;
-    opacity: 0;
-    color: magenta;
-}
-
 .panel.active{
     flex: 5;
     background-position: center;
+    max-width: 3000px;
 }
 
-.panel.active h3{
-    opacity: 1;
-    transition: opacity 0.3s ease-in 0.4s;
-}
 
 @media (max-width: 1125px){
     .panel:nth-of-type(4),.panel:nth-of-type(5),.panel:nth-of-type(6),.panel:nth-of-type(7){
