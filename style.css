@@ -69,13 +69,13 @@ a{
         transform: rotate(2160deg);
     }
     50% {
-        opacity: 1;
+        opacity: 0.9;
     }
     51% {
-        opacity: 1;
+        opacity: 0.9;
     }
     100% {
-        opacity: 1;
+        opacity: 0.9;
     }
 }
 
@@ -86,25 +86,29 @@ a{
     font-size: 5em;
     color: rgb(255, 255, 255);
     position: absolute;
-    animation: discEnter 1s ease-in 3s 1 normal forwards;
+    animation: discEnter 2s ease-in 3s 1 normal forwards;
 }
 
 @keyframes discEnter {
     0% {
         opacity: 1;
     }
+
+    50%{
+        transform: translateY(147%);
+    }
+
     100% {
-        transform: translateY(121%);
-        
+        transform: translateY(747%);
     } 
 }
 
 .invisibleBox{
     position: absolute;
     background-color: #0d313b;
-    width: 100px;
-    height: 90px;
-    margin-top: 57px;
+    width: 300px;
+    height: 990px;
+    top: 48vh;
 }
 
 .profileContainer{
@@ -113,7 +117,7 @@ a{
     justify-content: center;
     justify-content: space-around;
     top: 48vh;
-    width: 40%;
+    width: 55vw;
     height: 5px;
     background-color: rgb(105, 151, 182);
     position: absolute;
@@ -152,7 +156,7 @@ a{
 }
 
 .profile a{
-    height: 122px;
+    height: 100%;
 }
 
 .profile img{
@@ -162,4 +166,21 @@ a{
 
 .profile img:hover{
     opacity: 0.5;
+}
+
+@media (max-width: 1360px){
+
+    .profile{
+        min-width: 90px;
+        max-width: 90px;
+        min-height: 90px;
+        max-height: 90px;
+    }
+}
+
+@media (max-width: 640px){
+
+    .titleFirst{
+        font-size: 3.3em;
+    }
 }

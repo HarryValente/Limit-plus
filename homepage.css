@@ -353,13 +353,59 @@ header.sticky ul .fas{
 .firstSlide{
     width: 100%;
     height: 100%;
-    background-color: darkorange;
+    background-color: #000000;
+}
+
+.heading-text-container{
+    position: relative;
+    width: 500px;
+    height: 400px;
+    left: 3%;
+    top: 14%;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading-text{
+    padding-top: 20px;
+    color: white;
+}
+
+.subHeading-text{
+    padding-top: 50px;
+    color: white;
+    width: 80%;
+}
+
+.button-container{
+    padding-top: 60px;
+    width: 80%;
+    height: 30px;
+}
+
+.headBtn{
+    width: 90px;
+    height: 40px;
+    margin: 10px;
+}
+
+.headingImg{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.192), rgb(0, 0, 0)), url('../images/blackPanther.jpg');
 }
 
 .secondSlide{
     width: 100%;
     height: 100%;
-    background-color: deeppink;
+    background-color: darkorange;
 }
 
 .thirdSlide{

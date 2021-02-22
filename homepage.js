@@ -122,6 +122,7 @@ searchBar.addEventListener('submit', (e) => {
     } else{
         window.location.reload()
     }
+
 })
 
 var swiper = new Swiper('.swiper-container', {

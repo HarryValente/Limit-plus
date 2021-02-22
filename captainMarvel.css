@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    /* background: rgb(53, 53, 53); */
+    /* background-color: violet; */
+    overflow-x: hidden; 
+    height: 130vh;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: #9c9c9c;
+    transition: 0.6s ease;
+    padding: 10px 5%;
+    z-index: 9999999;
+}
+
+header.sticky{
+    padding: 0 5%;
+    background: #cfcfcc;
+}
+
+header .logo{
+    font-size: 2.2em;
+    transition: 0.6s;
+}
+
+header .logo a{
+    text-decoration: none;
+    color: #eeeeee;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    padding-left: 5%;
+}
+
+header ul li{
+    list-style: none;
+    position: relative;
+}
+
+header ul li a{
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.3s;
+    color: #eeeeee;
+}
+
+header ul li a:hover{
+    color: #86c2f0;
+}
+
+header ul .fas{
+    padding: 14px;
+    font-size: 1.2em;
+    color: #eeeeee;
+}
+
+header.sticky .logo,
+header.sticky .logo a,
+header.sticky ul li a,
+header.sticky ul .fas{
+    color: #000000;
+}
+
+/* Underline From Left */
+.hvr-underline-from-left {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+.hvr-underline-from-left:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #2098D1;
+    height: 4px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
+    right: 0;
+}
+
+@media (max-width: 1115px){
+    header ul{
+        width: 60%;
+        padding-left: 4%;
+    }
+}
+
+@media (max-width: 725px){
+    header ul{
+        width: 70%;
+        padding-left: 2%;
+    }
+
+    header ul li a{
+        text-decoration: none;
+        letter-spacing: 2px;
+        
+        font-weight: 500px;
+    }
+
+    header{
+        padding: 10px 2%;
+    }
+}
+
+.picture{
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    right: 3vw;
+    cursor: pointer;
+    
+}
+
+.profileTab{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    right: 3vw;
+    top: 9vh;
+    width: 148px;
+    height: 220px;
+    border-radius: 2px;
+    visibility: hidden;
+    opacity: 0;
+    display: block;
+    color: #ffffff;
+    transition: all 0.4s ease-in;
+    letter-spacing: 2px;
+}
+
+.switchAcc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50px;
+    height: 95px;
+    margin: 8px;
+    
+}
+
+.ciaraAcc, .emileAcc{
+    width: 40px;
+    height: 40px;
+    font-weight: 500px;
+}
+
+.accNameC{
+    position: absolute;
+    top: 19px;
+    left: 60px;
+    cursor: pointer;
+}
+
+.accNameP{
+    position: absolute;
+    top: 67px;
+    left: 60px;
+    cursor: pointer;
+}
+
+.profileLinks{
+    position: absolute;
+    bottom: 15px;
+    right: 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    font-weight: 500px;
+}
+
+.pLinks a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.pLinks:hover, .accNameC:hover, .accNameP:hover{
+    text-decoration: underline;
+}
+
+.profileLinks .pLinks:hover{
+    color: #ffffff;
+}
+
+.picture:hover + .profileTab{
+    visibility: visible;
+    opacity: 1; 
+}
+
+.profileTab:hover{
+    visibility: visible;
+    opacity: 1;
+}
+
+.mobile-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: green;
+    z-index: 999999999999999;
+}
+
+.mobile-nav ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    
+}
+
+.mobile-nav ul li{
+    font-size: 2em;
+    color: #ffffff;
+}
+
+@media (max-width: 750px){
+    .header ul{
+        display: none;
+    }
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.linear-gradient{
+    width: 100vw;
+    height: 130vh;
+    background-image: linear-gradient(to bottom,  rgba(47, 67, 83, 0.2), rgba(40, 49, 59, 1));
+    z-index: 99999999999999;
+}
+
+.img-container{
+    position: fixed;
+    width: 100%;
+    height: 120%;
+    top: 52px;
+    background-image:  url('../images/captainMarvelWallpaper.jpg');
+    /* background-size: cover; */
+    background-position: center;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+.image-logo{
+    position: absolute;
+    width: 50vw;
+    height: 40vh;
+    top: 29vh;
+    left: 1vw;
+}
+
+.btn-container{
+    position: absolute;
+    width: 34vw;
+    height: 10vh;
+    top: 74vh;
+    left: 9vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    width: 140px;
+    height: 60px;
+    font-size: 1.2em;
+    border: 1px black solid;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.btn:nth-child(2){
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: 1px white solid;
+}
+
+.altBtn{
+    width: 60px;
+    height: 60px;
+    font-size: 1.2em;
+    border-radius: 50%;
+    border: 2px white solid;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.btn:focus, .altBtn:focus{
+    outline: none;
+}
+
+.btn:active, .altBtn:active{
+    transform: scale(0.98);
+}
+
+.filmContents{
+    position: absolute;
+    width: 35vw;
+    height: 3vh;
+    top: 84vh;
+    left: 9vw;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.filmContents li:nth-child(1){
+    list-style: none;
+    background: #9c9c9c;
+    width: 40px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.description{
+    position: absolute;
+    width: 43vw;
+    height: 3vh;
+    top: 90vh;
+    left: 9vw;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 1em;
+}
