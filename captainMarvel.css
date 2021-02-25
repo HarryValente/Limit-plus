@@ -264,7 +264,7 @@ header.sticky ul .fas{
 
 .linear-gradient{
     width: 100vw;
-    height: 130vh;
+    height: 160vh;
     background-image: linear-gradient(to bottom,  rgba(47, 67, 83, 0.2), rgba(40, 49, 59, 1));
     z-index: 99999999999999;
 }
@@ -272,7 +272,7 @@ header.sticky ul .fas{
 .img-container{
     position: fixed;
     width: 100%;
-    height: 120%;
+    height: 110%;
     top: 52px;
     background-image:  url('../images/captainMarvelWallpaper.jpg');
     /* background-size: cover; */
@@ -333,6 +333,49 @@ header.sticky ul .fas{
     transform: scale(0.98);
 }
 
+@media (max-width: 1250px){
+    .btn-container{
+        width: 44vw;
+    }
+}
+
+@media (max-width: 940px){
+    .btn-container{
+        width: 54vw;
+    }
+}
+
+@media (max-width: 740px){
+    .btn{
+        width: 100px;
+        height: 40px;
+        font-size: 0.8em;
+    }
+
+    .altBtn{
+        width: 40px;
+        height: 40px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 525px){
+    .btn{
+        width: 80px;
+        height: 35px;
+        font-size: 0.7em;
+    }
+
+    .altBtn{
+        width: 35px;
+        height: 35px;
+        font-size: 0.7em;
+    }
+    .btn-container{
+        width: 62vw;
+    }
+}
+
 .filmContents{
     position: absolute;
     width: 35vw;
@@ -341,7 +384,14 @@ header.sticky ul .fas{
     left: 9vw;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     color: white;
+}
+
+.filmContents li{
+    /* font-size: clamp(0.7em, 1.5vw, 1em); */
+    padding-left: 4px;
+    list-style-type: none;
 }
 
 .filmContents li:nth-child(1){
@@ -356,10 +406,93 @@ header.sticky ul .fas{
     position: absolute;
     width: 43vw;
     height: 3vh;
-    top: 90vh;
+    top: 92vh;
     left: 9vw;
     display: flex;
     justify-content: space-between;
     color: white;
-    font-size: 1em;
+    /* font-size: 1em; */
+    font-size: clamp(0.7em, 1.5vw, 1em);
+}
+
+@media (max-width: 860px){
+
+    .description{
+        width: 50vw;
+    }
+
+}
+
+.related-container{
+    /* background-color: #2098D1; */
+    position: absolute;
+    width: 100vw;
+    height: 45vh;
+    top: 115vh;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.related-container ul{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    padding-left: 10%;
+}
+
+.related-container ul li{
+    list-style: none;
+    color: #d1d1d1;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#marker{
+    left: 10%;
+    bottom: 40vh;
+    position: absolute;
+    height: 4px;
+    width: 130px;
+    background: white;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+.swiper-container {
+    width: 80%;
+    height: 20%;
+    position: absolute;
+    bottom: -22vh;
+    display: flex;
+    margin-left: 10%;
+}
+
+.swiper-slide {
+    
+    text-align: center;
+    font-size: 18px;
+    border-radius: 20px;
+    border: 6px solid #373741;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img{
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+    transition: 1s;
 }
