@@ -38,4 +38,20 @@ var swiper = new Swiper('.swiper-container', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+      0: { /* when window >=0px - webflow mobile landscape/portriat */
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      550: { /* when window >= 767px - webflow tablet */
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      850: { /* when window >= 988px - webflow desktop */
+        slidesPerView: 3,
+        spaceBetween: 40,
+      }
+    },
   });
+
+  

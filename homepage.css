@@ -398,7 +398,7 @@ header.sticky ul .fas{
     right: 0;
     top: 0;
     object-fit: cover;
-    object-position: center;
+    object-position: bottom;
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.192), rgb(0, 0, 0)), url('../images/blackPanther.jpg');
 }
 
