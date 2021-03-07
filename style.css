@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #0d313b;
+    background-image: linear-gradient(#28313B, #485461, #2F4353);
     overflow: hidden;
 }
 
@@ -31,7 +31,8 @@ body{
     outline: none;
     text-decoration: none;
     animation-duration: 4.5s;
-    
+    /* -webkit-text-stroke: 1px darkorange; */
+    /* text-shadow: 4px 4px 8px #000000; */
 }
 
 .title-container{
@@ -42,7 +43,7 @@ body{
 
 @keyframes down {
     100%{
-        top: 31vh;
+        top: 32vh;
     }
 }
 
@@ -99,15 +100,16 @@ a{
     }
 
     100% {
-        transform: translateY(747%);
+        transform: translateY(647%);
     } 
 }
 
 .invisibleBox{
     position: absolute;
-    background-color: #0d313b;
+    background-image: linear-gradient(to bottom, #475360, #2e4353);
+    /* background-color: linear-gradient(#475360, #2e4353); */
     width: 300px;
-    height: 990px;
+    height: 55vh;
     top: 48vh;
 }
 

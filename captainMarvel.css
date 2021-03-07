@@ -80,7 +80,8 @@ header.sticky .logo,
 header.sticky .logo a,
 header.sticky ul li a,
 header.sticky ul .fas{
-    color: #000000;
+    /* color: #000000; */
+    color: white;
 }
 
 /* Underline From Left */
@@ -432,8 +433,9 @@ header.sticky ul .fas{
 .related-container{
     /* background-color: #2098D1; */
     position: absolute;
-    width: 100vw;
+    width: 50vw;
     height: 45vh;
+    left: 7vw;
     top: 115vh;
     display: flex;
     justify-content: space-between;
@@ -442,9 +444,9 @@ header.sticky ul .fas{
 
 .related-container ul{
     display: flex;
-    width: 50%;
+    width: 100%;
     justify-content: space-between;
-    padding-left: 10%;
+    
 }
 
 .related-container ul li{
@@ -455,8 +457,8 @@ header.sticky ul .fas{
 }
 
 #marker{
-    left: 10%;
-    bottom: 40vh;
+    left: 0;
+    top: 40px;
     position: absolute;
     height: 4px;
     width: 130px;
@@ -465,18 +467,28 @@ header.sticky ul .fas{
     border-radius: 4px;
 }
 
+@media (max-width: 665px) {
+    .related-container ul li{
+        font-size: 1em; 
+    }
+
+    #marker{
+        bottom: 42vh;
+    }
+}
+
 .info-container{
-    position: relative;
+    position: absolute;
     width: 95%;
     height: 20%;
-    bottom: 32vh;
+    bottom: -190px;
     margin-left: 2.5%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.swiper-container {
+/* .swiper-container {
     width: 95%;
     height: 80%;
     position: absolute;
@@ -491,7 +503,7 @@ header.sticky ul .fas{
     border-radius: 20px;
     border: 6px solid #373741;
     
-    /* Center slide text vertically */
+     Center slide text vertically 
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -535,74 +547,86 @@ section::-webkit-scrollbar{
     display: none;
 }
 
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(3,100%);
-    overflow:hidden;
+ .wrapper {
+    width: 295vw;
+    height: 95%;
+    background-color: violet;
+    overflow-x: scroll;
     scroll-behavior: smooth;
+    display: flex;
+} 
+
+
+
+
+
+.test{
+    position: relative;
+    width: 95%;
+    height: 20%;
+    bottom: 36vh;
+    margin-left: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+
+.swiper-container{
+    width: 95%;
+    height: 80%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    /* background: #2098D1; */
 }
 
-section {
-      width: 100%;
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(5, auto);
-      margin: 20px 0;
-      
-      
-    }
-    .item {
-        padding: 0 2px;
-        }
+.swiper-content{
+    width: 700%;
+    height: 100%;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: space-between;
+}
 
-      /* .item:hover { 
-          margin: 0 40px;
-          transform: scale(1.2);
-        } */
+.swiper-slide{
+    width: 400px;
+    height: 100%;
+    margin: 0 20px;
+    border-radius: 10px;
+}
 
-      .arrow__btn{
-        position: absolute;
-        color: #fff;
-        text-decoration: none;
-        font-size: 6em;
-        background:rgb(0,0,0);
-        width: 80px;
-        padding: 20px;
-        text-align: center;
-        z-index: 1;
-        
-        
-        
-      }
-      .arrow__btn:nth-of-type(1) {
-          top:0; bottom:0; left:0;
-          
-          background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-        }
-        .arrow__btn:nth-of-type(2) {
-          top:0; bottom:0; right: 0;
-          background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-        }
-  /* Remove the arrow for Mobile */
-  @media only screen and (max-width: 600px) {
-    a.arrow__btn {
-      display:none;
-    }
-  }
+.swiper-slide img{
+    border-radius: 10px;
+}
 
+::-webkit-scrollbar {
+    display: none;
+}
 
+.slide{
+    position: absolute;
+    width: 40px;
+    height: 80px;
+    font-size: 2em;
+    background-color: #30373a;
+    border: none;
+    color: #eeeeee;
+}
 
+.slide:focus{
+    outline: none;
+}
 
+.slide.left{
+    left: 0;
+}
 
-
-
-
-
-
-
-
-
-
+.slide.right{
+    right: 0;
+}
 
 
 
