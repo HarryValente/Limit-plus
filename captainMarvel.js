@@ -6,6 +6,23 @@ window.addEventListener('scroll',  function() {
     header.classList.toggle('sticky', window.scrollY > 0)
 })
 
+// Initialise the video variables
+let video = document.querySelector('.Marvel')
+let cross = document.querySelector('.fa-times')
+let playBtn = document.querySelector('.playBtn')
+
+// When the play btn is clicked the video is shown
+playBtn.addEventListener('click', () => {
+  video.classList.add('show')
+  cross.classList.add('show')
+})
+
+// When the cross btn is clicked the video is removed
+cross.addEventListener('click', () => {
+  video.classList.remove('show')
+  cross.classList.remove('show')
+})
+
 // Related underline decoration
 let marker = document.getElementById('marker')
 let item = document.querySelectorAll('.relatedList')
@@ -23,37 +40,6 @@ item.forEach(link => {
     })
 })
 
-// Swiper.JS
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      0: { /* when window >=0px - webflow mobile landscape/portriat */
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-      550: { /* when window >= 767px - webflow tablet */
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      850: { /* when window >= 988px - webflow desktop */
-        slidesPerView: 3,
-        spaceBetween: 40,
-      }
-    },
-  });
-
 const suggested = document.getElementById('suggested')
 const extras = document.getElementById('extras')
 const details = document.getElementById('details')
@@ -65,54 +51,221 @@ swipe.classList.add('test')
 suggested.addEventListener('click', () => {
   removeCurrentDetails()
 
-  container.innerHTML = `<div class="swiper-container">
+  container.innerHTML = `<div class="slider-container">
+                        
+                            
+    <span><i class="fas fa-chevron-left"></i></span>
+    <span><i class="fas fa-chevron-right"></i></span>
+    
 
-  <div class="swiper-content">
-      <div class="swiper-slide"><img src="../images/scottPilgrim.jpg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/blackPanther.jpg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/antmanWasp.jpg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/guardiansOfTheGalaxy.jpeg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/21JumpStreet.jpg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/wonderWoman84.jpg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/kongSkullIsland.jpg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/suicideSquad.jpeg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/spidermanFarFromHome.png" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/darkKnightRises.jpg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/doctorStrange.jpg" width="100%" height="100%"></div>
-      <div class="swiper-slide"><img src="../images/aquaman.jpg" width="100%" height="100%"></div>
+  <section>
+    <div class="product">                     
+        <img src="../images/21JumpStreet.jpg" alt="">                                
+    </div>
+
+    <div class="product">                       
+        <img src="../images/antmanWasp.jpg" alt="">                     
+    </div>
+
+    <div class="product">                    
+        <img src="../images/blackPanther.jpg" alt="">                           
+    </div>
+
+    <div class="product">                        
+        <img src="../images/darkKnightRises.jpg" alt="">                              
+    </div>
+
+    <div class="product">                     
+        <img src="../images/doctorStrange.jpg" alt="">                             
+    </div>
+
+    <div class="product">                        
+        <img src="../images/guardiansOfTheGalaxy.jpeg" alt="">                               
+    </div>
+
+    <div class="product">                      
+        <img src="../images/kongSkullIsland.jpg" alt="">                         
+    </div>
+
+    <div class="product">                          
+        <img src="../images/spidermanFarFromHome.png" alt="">                         
+    </div>
+
+    <div class="product">                          
+        <img src="../images/suicideSquad.jpeg" alt="">                          
+    </div>
+
+    <div class="product">                            
+        <img src="../images/wonderWoman84.jpg" alt="">                               
+    </div>
+
+    <div class="product">                      
+        <img src="../images/scottPilgrim.jpg" alt="">
+    </div>
+
+    <div class="product">
+        <img src="../images/aquaman.jpg" alt="">                            
+    </div>
+
+  </section>
   </div>
 
-  <button class="slide left"><i class="fas fa-chevron-left"></i></button>
-  <button class="slide right"><i class="fas fa-chevron-right"></i></button>
+  
+`
 
-</div>`
+// There is a scope issue so because this is within the local scope this code has to be run within the click event as the innerHTML isnt global
+
+let span = document.getElementsByTagName('span')
+let product = document.getElementsByClassName('product')
+let product_page = Math.ceil(product.length/4)
+let l = 0
+let movePer = 25.34
+let maxMove = 203
+
+// Mobile view
+
+let mobile_view = window.matchMedia("(max-width: 768px")
+if(mobile_view.matches){
+    movePer = 50.36
+    maxMove = 504
+}
+
+// Right and left btn scroll
+
+let right_mover = () => {
+    l = l + movePer
+
+    if(product == 1) {l = 0}
+
+    for(const i of product) {
+        if(l > maxMove) { l = l - movePer}
+        i.style.left = '-' + l + '%'
+    }
+}
+
+let left_mover = () =>{
+    l = l - movePer
+    if(l <= 0) {l = 0}
+
+    for(const i of product) {
+        if(product_page > 1)
+        i.style.left = '-' + l + '%'
+    }
+}
+
+// Run the left and right Btn and functions
+
+span[1].onclick = () => {right_mover()}
+span[0].onclick = () => {left_mover()}
 
 })
 
 extras.addEventListener('click', () => {
   removeCurrentDetails()
 
-  container.innerHTML = `<div class="swiper-container">
+  container.innerHTML = `<div class="slider-container">
+                        
+                            
+  <span><i class="fas fa-chevron-left"></i></span>
+  <span><i class="fas fa-chevron-right"></i></span>
+  
 
-<div class="swiper-content">
-    <div class="swiper-slide"><img src="../images/aquaman.jpg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/spidermanFarFromHome.png" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/darkKnightRises.jpg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/doctorStrange.jpg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/scottPilgrim.jpg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/blackPanther.jpg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/antmanWasp.jpg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/guardiansOfTheGalaxy.jpeg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/21JumpStreet.jpg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/wonderWoman84.jpg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/kongSkullIsland.jpg" width="100%" height="100%"></div>
-    <div class="swiper-slide"><img src="../images/suicideSquad.jpeg" width="100%" height="100%"></div>
+<section>
+  <div class="product">                     
+      <img src="../images/aquaman.jpg" alt="">                                
+  </div>
+
+  <div class="product">                       
+      <img src="../images/suicideSquad.jpeg" alt="">                     
+  </div>
+
+  <div class="product">                    
+      <img src="../images/scottPilgrim.jpg" alt="">                           
+  </div>
+
+  <div class="product">                        
+      <img src="../images/guardiansOfTheGalaxy.jpeg" alt="">                              
+  </div>
+
+  <div class="product">                     
+      <img src="../images/doctorStrange.jpg" alt="">                             
+  </div>
+
+  <div class="product">                        
+      <img src="../images/21JumpStreet.jpg" alt="">                               
+  </div>
+
+  <div class="product">                      
+      <img src="../images/kongSkullIsland.jpg" alt="">                         
+  </div>
+
+  <div class="product">                          
+      <img src="../images/spidermanFarFromHome.png" alt="">                         
+  </div>
+
+  <div class="product">                          
+      <img src="../images/antmanWasp.jpg" alt="">                          
+  </div>
+
+  <div class="product">                            
+      <img src="../images/wonderWoman84.jpg" alt="">                               
+  </div>
+
+  <div class="product">                      
+      <img src="../images/darkKnightRises.jpg" alt="">
+  </div>
+
+  <div class="product">
+      <img src="../images/blackPanther.jpg" alt="">                            
+  </div>
+
+</section>
 </div>
+`
+// There is a scope issue so because this is within the local scope this code has to be run within the click event as the innerHTML isnt global
 
-<button class="slide left"><i class="fas fa-chevron-left"></i></button>
-<button class="slide right"><i class="fas fa-chevron-right"></i></button>
+let span = document.getElementsByTagName('span')
+let product = document.getElementsByClassName('product')
+let product_page = Math.ceil(product.length/4)
+let l = 0
+let movePer = 25.34
+let maxMove = 203
 
-</div>`
+// Mobile view
+
+let mobile_view = window.matchMedia("(max-width: 768px")
+if(mobile_view.matches){
+    movePer = 50.36
+    maxMove = 504
+}
+
+// Right and left btn scroll
+
+let right_mover = () => {
+    l = l + movePer
+
+    if(product == 1) {l = 0}
+
+    for(const i of product) {
+        if(l > maxMove) { l = l - movePer}
+        i.style.left = '-' + l + '%'
+    }
+}
+
+let left_mover = () =>{
+    l = l - movePer
+    if(l <= 0) {l = 0}
+
+    for(const i of product) {
+        if(product_page > 1)
+        i.style.left = '-' + l + '%'
+    }
+}
+
+// Run the left and right Btn and functions
+
+span[1].onclick = () => {right_mover()}
+span[0].onclick = () => {left_mover()}
 
 })
 
@@ -162,24 +315,116 @@ details.addEventListener('click', () => {
   `
 })
 
-
-
 function removeCurrentDetails(params) {
   container.innerHTML = ''
 }
 
-const rightBtn = document.querySelector('.right')
-const leftBtn = document.querySelector('.left')
-const slider = document.querySelectorAll('.swiper-slide')
-const sliderContent = document.querySelector('.swiper-content')
 
-rightBtn.addEventListener('click', () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const rightBtn = document.querySelector('.right')
+// const leftBtn = document.querySelector('.left')
+// const slider = document.querySelectorAll('.swiper-slide')
+// const sliderContent = document.querySelector('.swiper-content')
+
+// rightBtn.addEventListener('click', () => {
+
+//   slider.forEach(film => {
+
+//     film.style.left = "-400px"
+            
+//         if(film.style.left = "-400px"){
+//           film.style.left = "-800px"
+//         }
+//   })
+
+//   // slider.forEach(film => {
+//   //   film.style.transform = "translateX(-400px)"
+//   // })
+
+// })
+
+// This is the function for the left and right buttons on the slider
+
+let span = document.getElementsByTagName('span')
+let product = document.getElementsByClassName('product')
+let product_page = Math.ceil(product.length/4)
+let l = 0
+let movePer = 25.34
+let maxMove = 203
+
+// Mobile view
+
+let mobile_view = window.matchMedia("(max-width: 768px")
+if(mobile_view.matches){
+    movePer = 50.36
+    maxMove = 504
+}
+
+// Right and left btn scroll
+
+let right_mover = () => {
+    l = l + movePer
+
+    if(product == 1) {l = 0}
+
+    for(const i of product) {
+        if(l > maxMove) { l = l - movePer}
+        i.style.left = '-' + l + '%'
+    }
+}
+
+let left_mover = () =>{
+    l = l - movePer
+    if(l <= 0) {l = 0}
+
+    for(const i of product) {
+        if(product_page > 1)
+        i.style.left = '-' + l + '%'
+    }
+}
+
+// Run the left and right Btn and functions
+
+span[1].onclick = () => {right_mover()}
+span[0].onclick = () => {left_mover()}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// leftBtn.addEventListener('click', () => {
+
+//   slider.forEach(film => {
+//     film.style.transform = "translateX(300px)"
+//   })
   
-  slider.style.transform = "translateX(-300px)"
-  
-})
-
-leftBtn.addEventListener('click', () => {
-  console.log('left');
-})
-
+// })

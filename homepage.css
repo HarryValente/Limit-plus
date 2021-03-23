@@ -23,7 +23,7 @@ header{
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    background-color: #9c9c9c;
+    background-color: rgba(0, 0, 0, 0.9);
     transition: 0.6s ease;
     padding: 10px 5%;
     z-index: 9999999;
@@ -31,7 +31,7 @@ header{
 
 header.sticky{
     padding: 0 5%;
-    background: #cfcfcc;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 header .logo{
@@ -80,7 +80,7 @@ header.sticky .logo,
 header.sticky .logo a,
 header.sticky ul li a,
 header.sticky ul .fas{
-    color: #000000;
+    color: #ffffff;
 }
 
 /* Underline From Left */
@@ -129,7 +129,6 @@ header.sticky ul .fas{
     header ul li a{
         text-decoration: none;
         letter-spacing: 2px;
-        
         font-weight: 500px;
     }
 
@@ -178,12 +177,10 @@ header.sticky ul .fas{
 
 #form.active .btn{
     transform: translateX(-34px);
-    /* transform: translateX(-35px); */
 }
 
 @media(max-width: 950px){
-    #form{
-        
+    #form{    
         height: 28px;
     }
     
@@ -299,7 +296,7 @@ header.sticky ul .fas{
     opacity: 1;
 }
 
-.mobile-nav{
+/* .mobile-nav{
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -325,6 +322,31 @@ header.sticky ul .fas{
     .header ul{
         display: none;
     }
+} */
+
+@media (max-width: 650px){
+    header .logo{
+        font-size: 1.5em;
+    }
+
+    .fa-home, .fa-tv, .fa-film, .fa-fire, .fa-ticket-alt{
+        font-size: 2em;
+    }
+
+    .picture{
+        height: 30px;
+        width: 30px;
+    }
+
+    header ul{
+        width: 60%;
+        padding-left: 2%;
+    }
+
+    header ul li a span{
+        display: none;
+    }
+
 }
 
 .swiper-container{
@@ -635,7 +657,7 @@ header.sticky ul .fas{
 }
 
 @media (max-width: 500px){
-    .panel:nth-of-type(10)
+    .panel:nth-of-type(10), .panel:nth-of-type(12)
     {
         display: none;
     }
@@ -739,3 +761,4 @@ main{
     width: 200px;
     background-color: aquamarine;
 } */
+

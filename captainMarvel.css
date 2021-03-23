@@ -9,8 +9,6 @@
 }
 
 body{
-    /* background: rgb(53, 53, 53); */
-    /* background-color: violet; */
     overflow-x: hidden; 
     height: 130vh;
 }
@@ -23,7 +21,7 @@ header{
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    background-color: #9c9c9c;
+    background-color: rgba(0, 0, 0, 0.9);
     transition: 0.6s ease;
     padding: 10px 5%;
     z-index: 9999999;
@@ -31,7 +29,7 @@ header{
 
 header.sticky{
     padding: 0 5%;
-    background: #cfcfcc;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 header .logo{
@@ -80,7 +78,6 @@ header.sticky .logo,
 header.sticky .logo a,
 header.sticky ul li a,
 header.sticky ul .fas{
-    /* color: #000000; */
     color: white;
 }
 
@@ -130,7 +127,6 @@ header.sticky ul .fas{
     header ul li a{
         text-decoration: none;
         letter-spacing: 2px;
-        
         font-weight: 500px;
     }
 
@@ -243,7 +239,6 @@ header.sticky ul .fas{
     justify-content: space-around;
     align-items: center;
     list-style-type: none;
-    
 }
 
 .mobile-nav ul li{
@@ -280,9 +275,8 @@ header.sticky ul .fas{
     position: fixed;
     width: 100%;
     height: 110%;
-    top: 52px;
+    top: 0;
     background-image:  url('../images/captainMarvelWallpaper.jpg');
-    /* background-size: cover; */
     background-position: center;
     background-size: 100% 100%;
     z-index: -1;
@@ -396,7 +390,6 @@ header.sticky ul .fas{
 }
 
 .filmContents li{
-    /* font-size: clamp(0.7em, 1.5vw, 1em); */
     padding-left: 4px;
     list-style-type: none;
 }
@@ -418,7 +411,6 @@ header.sticky ul .fas{
     display: flex;
     justify-content: space-between;
     color: white;
-    /* font-size: 1em; */
     font-size: clamp(0.7em, 1.5vw, 1em);
 }
 
@@ -427,11 +419,38 @@ header.sticky ul .fas{
     .description{
         width: 50vw;
     }
+}
 
+.Marvel{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s;
+    z-index: 99999999;
+    top: -100vh;
+    object-fit: cover;
+}
+
+.fa-times{
+    position: fixed;
+    top: -100vh;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    z-index: 9999999999;
+    color: #ff0000;
+}
+
+.Marvel.show{
+    top: 0;
+}
+
+.fa-times.show{
+    top: 15px;
+    right: 15px;
 }
 
 .related-container{
-    /* background-color: #2098D1; */
     position: absolute;
     width: 50vw;
     height: 45vh;
@@ -439,14 +458,12 @@ header.sticky ul .fas{
     top: 115vh;
     display: flex;
     justify-content: space-between;
-    
 }
 
 .related-container ul{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    
 }
 
 .related-container ul li{
@@ -488,99 +505,13 @@ header.sticky ul .fas{
     justify-content: center;
 }
 
-/* .swiper-container {
-    width: 95%;
-    height: 80%;
-    position: absolute;
-    display: flex;
-    margin: auto;
-}
-
-.swiper-slide {
-    
-    text-align: center;
-    font-size: 18px;
-    border-radius: 20px;
-    border: 6px solid #373741;
-    
-     Center slide text vertically 
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
-
-.swiper-slide img{
-    object-fit: cover;
-    object-position: center;
-    border-radius: 8px;
-    transition: 1s;
-}
-
-
-.extras-container{
-    width: 95%;
-    height: 95%;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-section{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: scroll;
-}
-
-section::-webkit-scrollbar{
-    display: none;
-}
-
- .wrapper {
-    width: 295vw;
-    height: 95%;
-    background-color: violet;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    display: flex;
-} 
-
-
-
-
-
-.test{
-    position: relative;
-    width: 95%;
-    height: 20%;
-    bottom: 36vh;
-    margin-left: 2.5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-
-
-.swiper-container{
+/* .swiper-container{
     width: 95%;
     height: 80%;
     position: absolute;
     display: flex;
     align-items: center;
     margin: auto;
-    /* background: #2098D1; */
 }
 
 .swiper-content{
@@ -596,6 +527,7 @@ section::-webkit-scrollbar{
     height: 100%;
     margin: 0 20px;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
 .swiper-slide img{
@@ -626,14 +558,220 @@ section::-webkit-scrollbar{
 
 .slide.right{
     right: 0;
+} */
+
+.slider-container{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 95%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: auto;
+  }
+  
+  .slider-container .similar-header{
+    width: 98%;
+    height: 60px;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    border-bottom: 2px solid #dddddd;
+  }
+  
+  .fa-chevron-left, .fa-chevron-right{
+    font-size: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #9b9b9b;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    line-height: 19px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 9999999;
+  }
+
+  .fa-chevron-left{
+      left: 0;
+  }
+
+  .fa-chevron-right{
+      right: 0;
+  }
+  
+  .fa-chevron-left:hover, .fa-chevron-right:hover{
+    background: #5a5a5a;
+    color: white;
+  }
+  
+  section{
+    width: 700%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+  }
+  
+  section::-webkit-scrollbar{
+    display: none;
+  }
+  
+  section .product{
+    min-width: 24%;
+    height: 90%;
+    /* background: whitesmoke; */
+    background: #f5ecdf;
+    margin: 0 20px 0 0;
+    border-radius: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+    transition: 0.5s;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+}
+  
+  section img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  .details, .button{
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    font-size: 20px;
+    color: #444444;
+  }
+  
+  small{
+    color: #555555;
+  }
+  
+  .button a{
+    text-decoration: none;
+    padding: 6px 14px;
+    font-size: 15px;
+    margin: 5px 0 0;
+    display: inline-block;
+    background: #6773ff;
+    color: white;
+  }
+  
+  p .fa-star{
+    display: inline;
+    width: 65%;
+    font-size: 20px;
+    color: #808080;
+  }
+  
+  @media (max-width: 768px){
+    .text h1{
+        font-size: 35px;
+    }
+  
+    .text p{
+        width: 90%;
+    }
+  
+    header h1{
+        font-size: 25px;
+    }
+  
+    header p span{
+        font-size: 30px;
+    }
+  
+    section .product{
+        min-width: 49%;
+        margin: 0 10px 0 0;
+    }
+  
+    .details, .button{
+        font-size: 16px;
+    }
+  
+    a{
+        padding: 6px 10px;
+    }
+  }
+
+
+
+
+
+/* 
+
+
+.slider-container{
+    width: 95%;
+    height: 80%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin: auto;
 }
 
+.slider-container section{
+    width: 700%;
+    height: 100%;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: space-between;
+}
 
+.product{
+    width: 400px;
+    height: 100%;
+    margin: 0 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
 
+.product img{
+    border-radius: 10px;
+}
 
+::-webkit-scrollbar {
+    display: none;
+}
 
+.fa-chevron-left{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    font-size: 2.5em;
+    background-color: #30373a;
+    border: none;
+    color: #eeeeee;
+}
 
-
+.fa-chevron-right{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    font-size: 2.5em;
+    background-color: #30373a;
+    border: none;
+    color: #eeeeee;
+} */
 
 .details-container{
     width: 95%;
