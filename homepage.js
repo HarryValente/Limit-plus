@@ -113,6 +113,8 @@ searchBar.addEventListener('submit', (e) => {
     // Want to get the value because it's an input so we can put it in a variable
     const searchTerm = searchInput.value
 
+    console.log(searchTerm);
+
     // if searchTerm exists and if searchterm doesnt equal to nothing run getMovies otherwise if submitting with nothing in just reload the page
     if(searchTerm && searchTerm !== ''){
         // Whatever is put into the searchTerm gets concatenated onto the API

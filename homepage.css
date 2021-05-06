@@ -411,6 +411,13 @@ header.sticky ul .fas{
     width: 90px;
     height: 40px;
     margin: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.headBtn:focus{
+    outline: none;
 }
 
 .headingImg{
@@ -421,7 +428,7 @@ header.sticky ul .fas{
     top: 0;
     object-fit: cover;
     object-position: bottom;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.192), rgb(0, 0, 0)), url('../images/blackPanther.jpg');
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url('../images/blackPanther.jpg');
 }
 
 .secondSlide{
