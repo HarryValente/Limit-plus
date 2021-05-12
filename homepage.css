@@ -353,7 +353,7 @@ header.sticky ul .fas{
     width: 95vw;
     height: 70vh;
     position: relative;
-    top: 15vh;
+    top: 13vh;
     background-color: #22254b;
     margin: auto;
     border-radius: 5px;
@@ -447,7 +447,7 @@ header.sticky ul .fas{
     position: relative;
     display: flex;
     justify-content: space-around;
-    top: 19vh;
+    top: 16vh;
     transition: 0.3s ease;
 }
 
@@ -612,7 +612,7 @@ header.sticky ul .fas{
     width: 92vw;
     display: flex;
     margin: auto;
-    top: 22vh;
+    top: 20vh;
 }
 
 .panel{
@@ -676,6 +676,16 @@ main{
     justify-content: center;
     align-items: center;
     margin-bottom: 430px;
+}
+
+.mainHeader{
+    position: relative;
+    color: white;
+    font-size: 1em;
+    top: 25vh;
+    padding-left: 65px;
+    display: inline-block;
+    
 }
 
 .movie{
