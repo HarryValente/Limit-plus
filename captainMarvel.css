@@ -334,6 +334,106 @@ header.sticky ul .fas{
     transform: scale(0.98);
 }
 
+.socialSection{
+    position: absolute;
+    top: 220px;
+    right: -400px;
+    width: 250px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: rgba(47, 67, 83, 0.9);
+    transition: 0.4s ease-out;
+}
+
+.socialSection.slide{
+    right: 10px;
+}
+
+.socialBanner{
+    width: 100%;
+    background-color: #28313B;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: #485461 2px solid;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.socialBanner h1{
+    font-size: 16px;
+    color: green;
+    
+}
+
+.socialBanner i{
+    font-size: 10px;
+}
+
+.socialBanner p{
+    font-size: 10px;
+    color: #808080;
+}
+
+.socialSection ul li{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.socialSection ul li:active{
+    border: 1px solid #808080;
+    border-radius: 3px;
+}
+
+.socialSection ul li img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px 15px 0 0;
+}
+
+.filmContents{
+    position: absolute;
+    width: 40vw;
+    height: 3vh;
+    top: 84vh;
+    left: 7vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.filmContents li{
+    padding-left: 4px;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.filmContents li:nth-child(1){
+    list-style: none;
+    background: #9c9c9c;
+    width: 40px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.description{
+    position: absolute;
+    width: 43vw;
+    
+    top: 92vh;
+    left: 7vw;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: clamp(0.6em, 1.4vw, 0.9em);
+}
+
 @media (max-width: 1250px){
     .btn-container{
         width: 44vw;
@@ -375,44 +475,10 @@ header.sticky ul .fas{
     .btn-container{
         width: 62vw;
     }
-}
 
-.filmContents{
-    position: absolute;
-    width: 40vw;
-    height: 3vh;
-    top: 84vh;
-    left: 7vw;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    color: white;
-}
-
-.filmContents li{
-    padding-left: 4px;
-    list-style-type: none;
-    font-size: 14px;
-}
-
-.filmContents li:nth-child(1){
-    list-style: none;
-    background: #9c9c9c;
-    width: 40px;
-    text-align: center;
-    border-radius: 2px;
-}
-
-.description{
-    position: absolute;
-    width: 43vw;
-    height: 3vh;
-    top: 90vh;
-    left: 7vw;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    font-size: clamp(0.6em, 1.4vw, 0.9em);
+    .filmContents li{
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 860px){
@@ -711,6 +777,19 @@ header.sticky ul .fas{
     a{
         padding: 6px 10px;
     }
+
+    .socialSection{
+        width: 150px;
+    }
+
+    .socialSection ul li{
+        font-size: 10px;
+        margin-left: 2px;
+    }
+
+    .socialBanner h1{
+        font-size: 12px;
+    }
   }
 
 
@@ -787,7 +866,7 @@ header.sticky ul .fas{
 .details-description{
     min-width: 350px;
     max-width: 890px;
-    height: 95%;
+    height: 80%;
     color: white;
 }
 

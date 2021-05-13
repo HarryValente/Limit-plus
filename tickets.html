@@ -57,6 +57,21 @@
         <div class="movie">
             <img src="../images/blackWidow.jpeg">      
         </div>
+        <div class="movie">
+            <img src="../images/blackWidow.jpeg">      
+        </div>
+        <div class="movie">
+            <img src="../images/blackWidow.jpeg">      
+        </div>
+        <div class="movie">
+            <img src="../images/blackWidow.jpeg">      
+        </div>
+        <div class="movie">
+            <img src="../images/blackWidow.jpeg">      
+        </div>
+        <div class="movie">
+            <img src="../images/blackWidow.jpeg">      
+        </div>
 
     </div>
 
@@ -67,6 +82,7 @@
             <div class="movie-container">
                 <label>Pick a movie:</label>
                 <select id="movie">
+                    <option value="0">Please choose a film</option>
                     <option value="10">Fast And The Furious 9 (£10)</option>
                     <option value="12">Ghostbusters Afterlife (£12)</option>
                     <option value="8">Marvels Black Widow (£8)</option>
@@ -175,12 +191,36 @@
         <div class="priceContainer">
             <p class="text">You have selected <span id="count">0</span> seats for a price of £<span id="total">0</span></p>
         </div>
-            
-        
+                  
     </div>
 
     <div class="paymentContainer">
-        
+        <h2>Card details</h2>
+
+        <h5>Payment method</h5>
+        <div class="payingChoices">
+            <button>PayPal</button>
+            <button>Credit</button>
+            <button>Debit</button>
+        </div>
+
+        <h5>Card number</h5>
+        <input type="number" placeholder="**** **** **** ***">
+
+        <div class="cardHeadersDetailsContainer">
+            <h5>Valid until</h5>
+            <h5>CVV</h5>
+        </div>
+
+        <div class="cardDetailsContainer">
+            <input type="number" placeholder="09/21">
+            <input type="number" placeholder="***">
+        </div>
+
+        <h5>Cardholder name</h5>
+        <input type="text" placeholder="John Doe">
+
+        <button class="proceed">Proceed and pay</button>
     </div>
 
 <script src="tickets.js"></script>

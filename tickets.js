@@ -34,34 +34,6 @@ btn && search.addEventListener('click', () => {
 
 const priceContainer = document.querySelector('.priceContainer')
 const ticketContainer = document.querySelector('.container')
-
-function fast9() {
-    priceContainer.innerHTML = ``
-    priceContainer.innerHTML = `
-    <img src="../images/fast9logo.png" class="filmLogo">
-
-    <p class="text">You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span></p>
-    `
-}
-
-function ghostbusters() {
-    priceContainer.innerHTML = ``
-    priceContainer.innerHTML = `
-    <img src="../images/ghostbustersAftlerlifeLogo.png" class="filmLogo">
-
-    <p class="text">You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span></p>
-    `
-}
-
-function blackWidow() {
-    priceContainer.innerHTML = ``
-    priceContainer.innerHTML = `
-    <img src="../images/Black-Widow-logo.png" class="filmLogo">
-
-    <p class="text">You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span></p>
-    `
-}
-
 const container = document.querySelector('.container')
 const seats = document.querySelectorAll('.row .seat:not(.occupied)')
 const count = document.getElementById('count')
@@ -120,16 +92,6 @@ movieSelect.addEventListener('change', e => {
     ticketPrice = +e.target.value
     setMovieData(e.target.selectedIndex, e.target.value);
     updateSelectedCountAndTotal()
-    if (ticketPrice === 12) {
-        console.log('THIS IS THE WAY TO CHANGE I GUESS');
-        ghostbusters()
-    } else if (ticketPrice === 10) {
-        fast9()
-        console.log('hiya');
-    } else{
-        blackWidow()
-        console.log('boo');
-    } 
 })
 
 // Seat click event

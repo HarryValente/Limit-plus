@@ -23,6 +23,17 @@ cross.addEventListener('click', () => {
   cross.classList.remove('show')
 })
 
+// Social slide in
+
+const socialSection = document.querySelector('.socialSection')
+const socialBtn = document.querySelector('.social')
+
+socialBtn.addEventListener('click', () => {
+    socialSection.classList.toggle('slide')
+})
+
+
+
 // Related underline decoration
 let marker = document.getElementById('marker')
 let item = document.querySelectorAll('.relatedList')
