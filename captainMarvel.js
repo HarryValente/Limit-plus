@@ -183,51 +183,51 @@ extras.addEventListener('click', () => {
 
 <section>
   <div class="product">                     
-      <img src="../images/aquaman.jpg" alt="">                                
+      <img src="../images/captainMarvelDeleted.jpeg" alt="">                                
   </div>
 
   <div class="product">                       
-      <img src="../images/suicideSquad.jpeg" alt="">                     
+      <img src="../images/captainMarvelDeleted2.jpeg" alt="">                     
   </div>
 
   <div class="product">                    
-      <img src="../images/scottPilgrim.jpg" alt="">                           
+      <img src="../images/captain-marvel-comics-mcu-header.jpeg" alt="">
   </div>
 
   <div class="product">                        
-      <img src="../images/guardiansOfTheGalaxy.jpeg" alt="">                              
+      <img src="../images/BrieLarsonJimmyKimmel.jpeg" alt="">                              
   </div>
 
   <div class="product">                     
-      <img src="../images/doctorStrange.jpg" alt="">                             
+      <img src="../images/directors-captain-marvel.jpeg" alt="">                             
   </div>
 
   <div class="product">                        
-      <img src="../images/21JumpStreet.jpg" alt="">                               
+      <img src="../images/captainMarvelTrailer.jpeg" alt="">                               
   </div>
 
   <div class="product">                      
-      <img src="../images/kongSkullIsland.jpg" alt="">                         
+      <img src="../images/captainMarvelPose.jpeg" alt="">                         
   </div>
 
   <div class="product">                          
-      <img src="../images/spidermanFarFromHome.png" alt="">                         
+      <img src="../images/directorsCut.jpeg" alt="">                         
   </div>
 
   <div class="product">                          
-      <img src="../images/antmanWasp.jpg" alt="">                          
+      <img src="../images/captainMarvelRedCarpet.jpeg" alt="">                          
   </div>
 
   <div class="product">                            
-      <img src="../images/wonderWoman84.jpg" alt="">                               
+      <img src="../images/captainMarvelComic2.jpeg" alt="">                               
   </div>
 
   <div class="product">                      
-      <img src="../images/darkKnightRises.jpg" alt="">
+      <img src="../images/marvel_strikeforce.jpeg" alt="">
   </div>
 
   <div class="product">
-      <img src="../images/blackPanther.jpg" alt="">                            
+      <img src="../images/captainMarvelGame.png" alt="">                            
   </div>
 
 </section>

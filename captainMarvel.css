@@ -273,10 +273,10 @@ header.sticky ul .fas{
 
 .img-container{
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 105%;
     top: 0;
-    background-image:  url('../images/captainMarvelWallpaper.jpg');
+    background-image:  url('../images/captainMarvelBG.jpeg');
     background-position: center;
     background-size: 100% 100%;
     z-index: -1;
@@ -305,6 +305,7 @@ header.sticky ul .fas{
     height: 55px;
     font-size: 1.2em;
     border: 1px black solid;
+    background-color: #c4ced8;
     border-radius: 3px;
     letter-spacing: 1px;
     font-weight: 500;
@@ -425,13 +426,13 @@ header.sticky ul .fas{
 .description{
     position: absolute;
     width: 43vw;
-    
+    height: 3vh;
     top: 92vh;
     left: 7vw;
     display: flex;
     justify-content: space-between;
     color: white;
-    font-size: clamp(0.6em, 1.4vw, 0.9em);
+    font-size: 12px;
 }
 
 @media (max-width: 1250px){
@@ -479,6 +480,10 @@ header.sticky ul .fas{
     .filmContents li{
         font-size: 12px;
     }
+
+    .description {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 860px){
@@ -496,6 +501,12 @@ header.sticky ul .fas{
     z-index: 99999999;
     top: -100vh;
     object-fit: cover;
+    background-color: black;
+}
+
+.Marvel .video{
+    width: 100%;
+    height: 100%;
 }
 
 .fa-times{

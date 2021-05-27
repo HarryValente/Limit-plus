@@ -33,6 +33,7 @@ btn && search.addEventListener('click', () => {
 // Change ticket info
 
 const priceContainer = document.querySelector('.priceContainer')
+const filmLogo = document.querySelector('.filmLogo')
 const ticketContainer = document.querySelector('.container')
 const container = document.querySelector('.container')
 const seats = document.querySelectorAll('.row .seat:not(.occupied)')
@@ -92,6 +93,26 @@ movieSelect.addEventListener('change', e => {
     ticketPrice = +e.target.value
     setMovieData(e.target.selectedIndex, e.target.value);
     updateSelectedCountAndTotal()
+
+    if (ticketPrice === 10) {
+        filmLogo.innerHTML = `<img src="../images/fast9logo.png">`
+    } if (ticketPrice === 12) {
+        filmLogo.innerHTML = `<img src="../images/ghostbustersAftlerlifeLogo.png">`
+    } if (ticketPrice === 8) {
+        filmLogo.innerHTML = `<img src="../images/Black-Widow-logo.png">`
+    } if (ticketPrice === 9) {
+        filmLogo.innerHTML = `<img src="../images/JungleCruiseLogo.png">`
+    } if (ticketPrice === 4) {
+        filmLogo.innerHTML = `<img src="../images/divergentLogo.png">`
+    } if (ticketPrice === 5) {
+        filmLogo.innerHTML = `<img src="../images/bumblebeeLogo.png">`
+    } if (ticketPrice === 7) {
+        filmLogo.innerHTML = `<img src="../images/minions-film-logo.png">`
+    } if (ticketPrice === 7.50) {
+        filmLogo.innerHTML = `<img src="../images/MEG_logo.png">`
+    } else {
+        return
+    }
 })
 
 // Seat click event

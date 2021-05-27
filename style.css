@@ -31,12 +31,11 @@ body{
     outline: none;
     text-decoration: none;
     animation-duration: 4.5s;
-    /* -webkit-text-stroke: 1px darkorange; */
-    /* text-shadow: 4px 4px 8px #000000; */
 }
 
 .title-container{
     position: absolute;
+    left: 6px;
     top: 25vh;
     animation: down 1.5s ease 4s 1 normal forwards;
 }
@@ -100,7 +99,7 @@ a{
     }
 
     100% {
-        transform: translateY(647%);
+        transform: translateY(800%);
     } 
 }
 

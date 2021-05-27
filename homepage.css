@@ -146,23 +146,25 @@ header.sticky ul .fas{
 #form #input{
     background-color: #86c2f0;
     border: 0;
+    border-radius: 0 3px 3px 0;
     font-size: 1.2em;
     padding: 15px;
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     transition: all 0.3s ease;
 }
 
 .btn{
     background-color: #eeeeee;
     border: 0;
+    border-radius: 3px 0 0 3px;
     cursor: pointer;
     font-size: 20px;
     position: absolute;
     top: 0;
     left: 0;
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     transition: transform 0.3s ease;
     z-index: 999000;
 }
@@ -176,7 +178,7 @@ header.sticky ul .fas{
 }
 
 #form.active .btn{
-    transform: translateX(-34px);
+    transform: translateX(-29px);
 }
 
 @media(max-width: 950px){
@@ -414,6 +416,7 @@ header.sticky ul .fas{
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    background-color: #c4ced8;
 }
 
 .headBtn:focus{
@@ -422,19 +425,31 @@ header.sticky ul .fas{
 
 .headingImg{
     position: absolute;
-    width: 80%;
+    width: 100%;
     height: 100%;
     right: 0;
     top: 0;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.801)), url('../images/blackPanther.jpg');
+    background-position: right;
     object-fit: cover;
-    object-position: bottom;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url('../images/blackPanther.jpg');
 }
 
 .secondSlide{
     width: 100%;
     height: 100%;
     background-color: darkorange;
+}
+
+.headingImg.two{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.801)), url('../images/central-intelligence.jpeg');
+    background-position:  right;
+    
+}
+
+.headingImg.three{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.801)), url('../images/love-rosie.jpeg');
+    background-position: top right;
+    object-fit: cover;
 }
 
 .thirdSlide{
@@ -546,14 +561,15 @@ header.sticky ul .fas{
 .card .content h2{
     text-transform: uppercase;
     /* font-size: 1.3em; */
-    font-size: clamp(1em, 15vw, 1.3em);
+    font-size: clamp(0.7em, 13vw, 1.2em);
     line-height: 1em;
     color: white;
 }
 
 .card .content p{
     color: white;
-    font-size: 0.8em;
+    font-size: 0.7em;
+    margin-top: 4px;
 }
 
 .card .content a{
@@ -561,10 +577,10 @@ header.sticky ul .fas{
     display: inline-block;
     color: #111111;
     font-size: 0.7em;
-    padding: 10px 20px;
+    padding: 5px 5px;
     border-radius: 10px;
     background: #ffffff;
-    margin-top: 10%;
+    margin-top: 4%;
     text-decoration: none;
 }
 
@@ -681,7 +697,7 @@ main{
 .mainHeader{
     position: relative;
     color: white;
-    font-size: 1em;
+    font-size: 1.4em;
     top: 25vh;
     padding-left: 65px;
     display: inline-block;
